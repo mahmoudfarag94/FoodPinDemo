@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  FoodPin
-//
-//  Created by marwa on 3/17/18.
-//  Copyright © 2018 marwa. All rights reserved.
-//
 
 import UIKit
 import CoreData
@@ -16,7 +9,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 216.0/255.0, green: 74.0/255.0, blue: 32.0/255.0, alpha: 0.1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+           if let barFont = UIFont(name: "Aviner-Light", size: 100){
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue  , NSAttributedStringKey.font:barFont]
+                }
+        UITabBar.appearance().tintColor = UIColor(displayP3Red: 235.0/255.0, green: 75.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor(displayP3Red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+        UITabBar.appearance().backgroundImage = UIImage(named:"tabitem-selected")
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named:"tabitem-selected")
+        
+        
         return true
     }
 
@@ -90,4 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+let ad = UIApplication.shared.delegate as! AppDelegate
+let context = ad.persistentContainer.viewContext
 
